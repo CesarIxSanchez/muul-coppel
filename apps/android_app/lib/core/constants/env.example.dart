@@ -1,0 +1,1 @@
+const String mapboxPublicToken = 'PON_TU_TOKEN_DE_MAPBOX_AQUI';
