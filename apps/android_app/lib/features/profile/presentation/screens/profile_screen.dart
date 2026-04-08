@@ -145,7 +145,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               const SizedBox(height: 40),
 
-<<<<<<< HEAD
               // Medallas
               _ProfileOption(
                 icon: Icons.emoji_events,
@@ -164,8 +163,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Navigator.pushNamed(context, '/business_profile');
                   },
                 ),
-=======
->>>>>>> caff710da1827369fa85dbd22b4447a89451e9c2
               _ProfileOption(icon: Icons.bookmark_outline, label: 'Lugares guardados', onTap: () {}),
               _ProfileOption(icon: Icons.history, label: 'Historial de visitas', onTap: () {}),
               _ProfileOption(icon: Icons.notifications_none_outlined, label: 'Notificaciones', onTap: () {}),
