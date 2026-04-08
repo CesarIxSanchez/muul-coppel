@@ -140,6 +140,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               const SizedBox(height: 40),
 
+              // Medallas
+              _ProfileOption(
+                icon: Icons.emoji_events,
+                label: 'Mis Medallas',
+                onTap: () {
+                  Navigator.pushNamed(context, '/badges');
+                },
+              ),
+
               // Solo mostrar gestión de negocio si el usuario es tipo negocio
               if (_isBusiness)
                 _ProfileOption(

@@ -47,3 +47,7 @@ app.*.map.json
 # Secrets - no subir a git
 lib/core/constants/env.dart
 .env
+
+#Documentación de la API
+API_DOCUMENTATION.md
+BaseDeDatos.txt

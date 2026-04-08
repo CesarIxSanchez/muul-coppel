@@ -13,6 +13,7 @@ import 'features/explore/presentation/screens/search_screen.dart';
 import 'features/places/presentation/screens/place_detail_screen.dart';
 import 'features/places/presentation/screens/business_detail_screen.dart';
 import 'features/business/presentation/screens/my_business_profile_screen.dart';
+import 'features/profile/presentation/screens/badges_screen.dart';
 import 'features/map/presentation/map_screen.dart';
 import 'src/screens/login_screen.dart';
 import 'src/state/session_controller.dart';
@@ -73,6 +74,7 @@ class MuulApp extends StatelessWidget {
         '/place_detail': (context) => const PlaceDetailScreen(),
         '/business_detail': (context) => const BusinessDetailScreen(),
         '/business_profile': (context) => const MyBusinessProfileScreen(),
+        '/badges': (context) => const BadgesScreen(),
       },
 
     );
