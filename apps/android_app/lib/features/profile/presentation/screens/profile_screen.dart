@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../../../core/constants/app_colors.dart';
+import '../../../business/presentation/screens/my_business_profile_screen.dart';
 import '../../../../src/services/auth_session_service.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -65,6 +66,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    if (!_loading && _isBusiness) {
+      return const MyBusinessProfileScreen();
+    }
+
     return Scaffold(
       backgroundColor: AppColors.bgApp,
       body: SafeArea(
@@ -140,15 +145,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               const SizedBox(height: 40),
 
-              // Solo mostrar gestión de negocio si el usuario es tipo negocio
-              if (_isBusiness)
-                _ProfileOption(
-                  icon: Icons.storefront_outlined,
-                  label: 'Gestión de mi Negocio',
-                  onTap: () {
-                    Navigator.pushNamed(context, '/business_profile');
-                  },
-                ),
               _ProfileOption(icon: Icons.bookmark_outline, label: 'Lugares guardados', onTap: () {}),
               _ProfileOption(icon: Icons.history, label: 'Historial de visitas', onTap: () {}),
               _ProfileOption(icon: Icons.notifications_none_outlined, label: 'Notificaciones', onTap: () {}),
@@ -201,7 +197,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
 
               const SizedBox(height: 32),
-              Text('Muul v1.0.0 • Mundial 2026', style: TextStyle(color: Colors.grey[700], fontSize: 12)),
+              Text('Muul v1.0.0 • Muul 2026', style: TextStyle(color: Colors.grey[700], fontSize: 12)),
               const SizedBox(height: 16),
             ],
           ),

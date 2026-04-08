@@ -65,7 +65,7 @@ class _HomeBody extends ConsumerWidget {
                   ),
                   const SizedBox(height: 4),
                   const Text(
-                    'Muul 🌎',
+                    'Muul',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 28,
@@ -81,7 +81,7 @@ class _HomeBody extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: const Text(
-                  '⚽ Mundial 2026',
+                  'Muul 2026',
                   style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w600),
                 ),
               ),

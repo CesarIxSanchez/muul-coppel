@@ -1,8 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:data/data.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-class BusinessDetailScreen extends StatelessWidget {
+class BusinessDetailScreen extends StatefulWidget {
   const BusinessDetailScreen({super.key});
+
+  @override
+  State<BusinessDetailScreen> createState() => _BusinessDetailScreenState();
+}
+
+class _BusinessDetailScreenState extends State<BusinessDetailScreen> {
+  bool _viewTracked = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_viewTracked) return;
+
+    final business = ModalRoute.of(context)?.settings.arguments as Business?;
+    if (business != null && business.id.isNotEmpty) {
+      _viewTracked = true;
+      _trackBusinessView(business.id);
+    }
+  }
+
+  Future<void> _trackBusinessView(String businessId) async {
+    try {
+      final supabase = Supabase.instance.client;
+      await supabase.rpc('increment_vista_negocio', params: {
+        'p_negocio_id': businessId,
+      });
+    } catch (_) {}
+  }
 
   @override
   Widget build(BuildContext context) {

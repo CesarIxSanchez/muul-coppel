@@ -47,6 +47,7 @@ migrate_working_dir/
 !packages/**/pubspec.lock
 .env
 .env.*
+.env.example.*
 backend/.env
 backend/node_modules/
 backend/dist/

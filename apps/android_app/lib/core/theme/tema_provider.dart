@@ -25,7 +25,7 @@ const _temas = {
     primary:   Color(0xFF273D6C),
     secondary: Color(0xFF599265),
     accent:    Color(0xFFFD495A),
-    nombre:    'Mundial 2026',
+    nombre:    'Muul 2026',
   ),
   AppTema.diaDeMuertos: TemaColors(
     primary:   Color(0xFF4A0E5C),

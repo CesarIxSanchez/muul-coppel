@@ -7,6 +7,7 @@ class PoiModel {
   final String descripcion;
   final double latitud;
   final double longitud;
+  final bool esNegocio;
   final String? horario;
   final String? foto;
   final bool verificado;
@@ -19,6 +20,7 @@ class PoiModel {
     required this.descripcion,
     required this.latitud,
     required this.longitud,
+    this.esNegocio = false,
     this.horario,
     this.foto,
     this.verificado = false,
@@ -35,6 +37,7 @@ class PoiModel {
       descripcion: props['full_address'] ?? props['place_formatted'] ?? '',
       latitud: (coords[1] as num).toDouble(),
       longitud: (coords[0] as num).toDouble(),
+      esNegocio: false,
     );
   }
 
@@ -48,6 +51,7 @@ class PoiModel {
         descripcion: json['descripcion'] ?? json['contexto_ia'] ?? '',
         latitud: (json['latitud'] as num?)?.toDouble() ?? 0.0,
         longitud: (json['longitud'] as num?)?.toDouble() ?? 0.0,
+        esNegocio: esNegocio,
         // Solo los negocios pueden tener el sello "Muul" (verificado)
         verificado: esNegocio ? (json['verificado'] ?? false) : false,
       );
