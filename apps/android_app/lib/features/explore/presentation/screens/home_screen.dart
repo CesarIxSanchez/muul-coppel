@@ -65,7 +65,7 @@ class _HomeBody extends ConsumerWidget {
                   ),
                   const SizedBox(height: 4),
                   const Text(
-                    'Muul 🌎',
+                    'Muul',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 28,
@@ -81,7 +81,11 @@ class _HomeBody extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: const Text(
+<<<<<<< HEAD
                   '🌎 Muul 2026',
+=======
+                  'Muul 2026',
+>>>>>>> caff710da1827369fa85dbd22b4447a89451e9c2
                   style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w600),
                 ),
               ),

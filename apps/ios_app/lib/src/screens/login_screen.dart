@@ -99,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Tu conserje digital para el Mundial 2026.',
+                        'Tu conserje digital para Muul 2026.',
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                               color: MuulTheme.textMuted,

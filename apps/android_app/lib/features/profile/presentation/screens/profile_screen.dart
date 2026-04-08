@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../../../core/constants/app_colors.dart';
+import '../../../business/presentation/screens/my_business_profile_screen.dart';
 import '../../../../src/services/auth_session_service.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -65,6 +66,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    if (!_loading && _isBusiness) {
+      return const MyBusinessProfileScreen();
+    }
+
     return Scaffold(
       backgroundColor: AppColors.bgApp,
       body: SafeArea(
@@ -140,6 +145,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               const SizedBox(height: 40),
 
+<<<<<<< HEAD
               // Medallas
               _ProfileOption(
                 icon: Icons.emoji_events,
@@ -158,6 +164,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Navigator.pushNamed(context, '/business_profile');
                   },
                 ),
+=======
+>>>>>>> caff710da1827369fa85dbd22b4447a89451e9c2
               _ProfileOption(icon: Icons.bookmark_outline, label: 'Lugares guardados', onTap: () {}),
               _ProfileOption(icon: Icons.history, label: 'Historial de visitas', onTap: () {}),
               _ProfileOption(icon: Icons.notifications_none_outlined, label: 'Notificaciones', onTap: () {}),
@@ -210,7 +218,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
 
               const SizedBox(height: 32),
-              Text('Muul v1.0.0 • Mundial 2026', style: TextStyle(color: Colors.grey[700], fontSize: 12)),
+              Text('Muul v1.0.0 • Muul 2026', style: TextStyle(color: Colors.grey[700], fontSize: 12)),
               const SizedBox(height: 16),
             ],
           ),

@@ -3,6 +3,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geolocator/geolocator.dart' as geo;
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../../../core/services/location_service.dart';
 import '../../data/poi_repository.dart';
 import '../../data/route_service.dart';
@@ -133,6 +134,7 @@ class MapState {
 class MapNotifier extends AsyncNotifier<MapState> {
   final _poiRepo  = PoiRepository();
   final _routeSvc = RouteService();
+  final _supabase = Supabase.instance.client;
 
   @override
   Future<MapState> build() async => const MapState();
@@ -267,6 +269,10 @@ class MapNotifier extends AsyncNotifier<MapState> {
       rutaActivaIndex: 0,
       isLoadingRuta: false,
     ));
+
+    if (destino.esNegocio && rutas.isNotEmpty) {
+      await _registrarClickRutaNegocio(destino.id);
+    }
   }
 
   Future<void> calcularItinerario() async {
@@ -321,6 +327,16 @@ class MapNotifier extends AsyncNotifier<MapState> {
       ),
       MapAnimationOptions(duration: 1200, startDelay: 0),
     );
+  }
+
+  Future<void> _registrarClickRutaNegocio(String negocioId) async {
+    try {
+      await _supabase.rpc('increment_clicks_ruta_negocio', params: {
+        'p_negocio_id': negocioId,
+      });
+    } catch (_) {
+      // Si el RPC no existe todavía, omitimos para no bloquear navegación.
+    }
   }
 }
 

@@ -96,7 +96,7 @@ i18n 4 idiomas completos: ES, EN, ZH, PT en toda la interfaz
 incluyendo el chatbot y las indicaciones de ruta
 
 
-Temas de Eventos 4 temas: Mundial 2026, Día de Muertos, Primavera,
+Temas de Eventos 4 temas: Muul 2026, Día de Muertos, Primavera,
 
 Navidad con cambio dinámico de paleta
 
